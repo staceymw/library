@@ -30,6 +30,22 @@ body {
     background-color: #275DAD;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+ .user-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+ }
+
+.user-input {
+    max-width: 500px;
+    min-width: 100px;
+}
+
 
 .sidebar-img {
     height: 30px;
@@ -213,7 +229,7 @@ input {
     gap: 25px;
     background-color: #FCF7F8;
 }
-.projects {
+.books {
     grid-column: 1 / 2;
     grid-row: 2 / 6;
     display: grid;
@@ -251,7 +267,7 @@ input {
     width: 24px;
 }
 
-.your-projects {
+.your-books {
     font-size: 26px;
     justify-self: self-start;
     margin-bottom: 20px;
