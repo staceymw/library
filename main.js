@@ -9,11 +9,6 @@ class Book {
   }
 }
 
-// let title = document.getElementById("book-title").value;
-let author = document.getElementById("book-author").value;
-let pageCount = document.getElementById("page-count").value;
-let read = document.getElementById("read-checkbox").checked;
-
 function addBookToLibrary(title, author, pageCount, read) {
   const newBook = new Book(title, author, pageCount, read);
   console.log(newBook);
@@ -21,16 +16,44 @@ function addBookToLibrary(title, author, pageCount, read) {
   //displayBook();
 }
 
-document.getElementById("new-book-form").addEventListener("submit", handleAddBook);
+document.getElementById("new-book-form").addEventListener("submit", displayBook);
 
-function handleAddBook(event) {
+
+function displayBook(event) {
   event.preventDefault();
-  console.log(event);
-  const title = event.target[0];
-  console.log(title);
-  const author = event.target[1];
-  const pageCount = event.target[2];
-  const read = event.target[3];
+  
+  const books = document.getElementById("books");
+
+  const newCard = document.createElement("div");
+  newCard.classList.add("card");
+
+  const newTitle = document.createElement("h2");
+  const title = event.target[0].value;
+  newTitle.textContent = title;
+  newCard.append(newTitle);
+
+  const newAuthor = document.createElement("p");
+  const author = event.target[1].value;
+  newAuthor.textContent = `Written by: ${author}`;
+  newCard.append(newAuthor);
+
+  const newPageCount = document.createElement("p");
+  const pageCount = event.target[2].value;
+  newPageCount.textContent = `${pageCount} pages`;
+  newCard.append(newPageCount);
+
+  const label = document.createElement("label");
+  label.htmlFor = "read-status";
+  label.textContent = "Check if read.";
+  label.setAttribute("id", "read-status-label");
+  const readStatus = document.createElement("input");
+  readStatus.setAttribute("type", "checkbox");
+  readStatus.setAttribute("id", "read-status");
+  newCard.append(label);
+  newCard.append(readStatus);
+
+  books.append(newCard);
+
+  document.getElementById("new-book-form").reset();
 }
 
-function displayBook() {}
