@@ -29,32 +29,30 @@
                 </div>
                 <div class="sidebar">
                     <div class="sidebar-heading">
-                        <h1 class="dashboard-heading"><img class="sidebar-img" src="img/books.svg" id="dashboard-img"> Library<h1>
+                        <h1 class="dashboard-heading">
+                            <img class="sidebar-img" src="img/books.svg" id="dashboard-img"> Library
+                        </h1>
+                    </div>
+                    <form id="new-book-form">
+                        <div class="user-input-wrapper" id="book-title-wrapper">
+                            <label for="book-title">Book Title</label>
+                            <input class="user-input" type="text" name="book-title" id="book-title">
                         </div>
-                        <form id="new-book-form">
-                            <div class="user-input-wrapper" id="book-title-wrapper">
-                                <label for="book-title">Book Title</label>
-                                <input class="user-input" type="text" name="book-title" id="book-title">
-                </div>
-                <div class="user-input-wrapper" id="book-author-wrapper">
-                    <label for="book-title">Book Author</label>
-                    <input class="user-input" type="text" name="book-author" id="book-author">
-                </div>
-                <div class="user-input-wrapper" id="page-count-wrapper">
-                    <label for="page-count">Number of Pages</label>
-                    <input class="user-input" type="number" name="page-count" id="page-count">
-                </div>
-                <div class="user-input-wrapper" id="read-checkbox-wrapper">
-                    <label for="read-checkbox">Check box if you have read this book.</label>
-                    <input type="checkbox" name="read-checkbox" id="read-checkbox">
-                </div>
+                        <div class="user-input-wrapper" id="book-author-wrapper">
+                            <label for="book-title">Book Author</label>
+                            <input class="user-input" type="text" name="book-author" id="book-author">
+                        </div>
+                        <div class="user-input-wrapper" id="page-count-wrapper">
+                            <label for="page-count">Number of Pages</label>
+                            <input class="user-input" type="number" name="page-count" id="page-count">
+                        </div>
+                        <div class="user-input-wrapper" id="read-checkbox-wrapper">
+                            <label for="read-checkbox">Check box if you have read this book.</label>
+                            <input type="checkbox" name="read-checkbox" id="read-checkbox">
+                        </div>
                 
-                <input type="submit" value="ADD BOOK" id="add-book">
-            </form>
-            
-            
-            
-            
+                        <input type="submit" value="ADD BOOK" id="add-book">
+                    </form>  
         </div>
         <div class="main-content">
             <p class="your-books">Your Books</p>
