@@ -181,8 +181,8 @@ input {
 }
 
 .card {
-    display: grid;
-    grid-template-rows: 3fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     background-color: #DDE5F5;
