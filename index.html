@@ -2,14 +2,13 @@
 <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <script src="main.js"></script>
     <title>Page Title</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Montserrat">
-    </head>
+        </head>
 
-    <body>
+        <body>
         <div class="container">
             <div class="header">
                 <div class="search-bar">
@@ -27,15 +26,15 @@
                 </div>
                 <div class="account">
                     <img class="account-img" src="img/alert.svg"><img class="account-img" src="img/Avatar1.png"> Julie Robert</div>
-            </div>
-            <div class="sidebar">
-                <div class="sidebar-heading">
-                    <h1 class="dashboard-heading"><img class="sidebar-img" src="img/books.svg" id="dashboard-img"> Library<h1>
                 </div>
-               <form>
-                <div class="user-input-wrapper" id="book-title-wrapper">
-                    <label for="book-title">Book Title</label>
-                    <input class="user-input" type="text" name="book-title" id="book-title">
+                <div class="sidebar">
+                    <div class="sidebar-heading">
+                        <h1 class="dashboard-heading"><img class="sidebar-img" src="img/books.svg" id="dashboard-img"> Library<h1>
+                        </div>
+                        <form id="new-book-form">
+                            <div class="user-input-wrapper" id="book-title-wrapper">
+                                <label for="book-title">Book Title</label>
+                                <input class="user-input" type="text" name="book-title" id="book-title">
                 </div>
                 <div class="user-input-wrapper" id="book-author-wrapper">
                     <label for="book-title">Book Author</label>
@@ -49,22 +48,23 @@
                     <label for="read-checkbox">Check box if you have read this book.</label>
                     <input type="checkbox" name="read-checkbox" id="read-checkbox">
                 </div>
-
-                <input type="button" value="ADD BOOK" id="add-book">
-               </form>
-
-
-
-
-            </div>
-            <div class="main-content">
-                <p class="your-books">Your Books</p>
-                <div class="books">
-                    <!--book cards go here-->
-                    </div>
-
-                </div>
-            </div>
+                
+                <input type="submit" value="ADD BOOK" id="add-book">
+            </form>
+            
+            
+            
+            
         </div>
-    </body>
+        <div class="main-content">
+            <p class="your-books">Your Books</p>
+            <div class="books">
+                <!--book cards go here-->
+            </div>
+            
+        </div>
+    </div>
+</div>
+</body>
+<script src="main.js"></script>
 </html>
