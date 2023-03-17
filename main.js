@@ -21,15 +21,16 @@ function addBookToLibrary(title, author, pageCount, read) {
   //displayBook();
 }
 
-document
-  .getElementById("new-book-form")
-  .addEventListener("submit", handleAddBook);
+document.getElementById("new-book-form").addEventListener("submit", handleAddBook);
 
 function handleAddBook(event) {
   event.preventDefault();
-  console.log(event.target[0]);
+  console.log(event);
   const title = event.target[0];
-  console.log("Hello World");
+  console.log(title);
+  const author = event.target[1];
+  const pageCount = event.target[2];
+  const read = event.target[3];
 }
 
 function displayBook() {}
