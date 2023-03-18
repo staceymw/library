@@ -1,34 +1,32 @@
 let myLibrary = [];
 
 class Book {
-  constructor(title, author, pageCount, read) {
+  constructor(title, author, pageCount, readStatus) {
     this.title = title;
     this.author = author;
     this.pageCount = pageCount;
-    this.read = read;
+    this.readStatus = readStatus;
   }
 }
 
-function addBookToLibrary(title, author, pageCount, read) {
-  const newBook = new Book(title, author, pageCount, read);
-  console.log(newBook);
-  //myLibrary.push(newBook);
-  //displayBook();
+function addBookToLibrary(event) {
+  const title = event.target[0].value;
+  const author = event.target[1].value;
+  const pageCount = event.target[2].value;
+  const readStatus = document.getElementById("read-status").checked;
+  const newBook = new Book(title, author, pageCount, readStatus);
+  myLibrary.push(newBook);
 }
 
-document.getElementById("new-book-form").addEventListener("submit", displayBook);
-
-
 function displayBook(event) {
-  event.preventDefault();
-  
   const books = document.getElementById("books");
-
   const newCard = document.createElement("div");
   newCard.classList.add("card");
-
+  newCard.setAttribute("id", "card");
+  
   const newTitle = document.createElement("h2");
   const title = event.target[0].value;
+  newTitle.setAttribute("id", "card-heading");
   newTitle.textContent = title;
   newCard.append(newTitle);
 
@@ -46,14 +44,23 @@ function displayBook(event) {
   label.htmlFor = "read-status";
   label.textContent = "Check if read.";
   label.setAttribute("id", "read-status-label");
-  const readStatus = document.createElement("input");
-  readStatus.setAttribute("type", "checkbox");
-  readStatus.setAttribute("id", "read-status");
+
+  const newReadStatus = document.createElement("input");
+  newReadStatus.setAttribute("type", "checkbox");
+  newReadStatus.setAttribute("id", "read-status");
   newCard.append(label);
-  newCard.append(readStatus);
-
+  newCard.append(newReadStatus);
   books.append(newCard);
-
-  document.getElementById("new-book-form").reset();
+  //display is done
 }
 
+
+document.getElementById("new-book-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  displayBook(e);
+  addBookToLibrary(e);
+  document.getElementById("new-book-form").reset();
+});
+
+  
+  
