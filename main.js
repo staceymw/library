@@ -45,7 +45,6 @@ function getNewPageCount(pageCount) {
 function getReadStatusButton() {
   const readStatusButton = document.createElement("button");
   const checkbox = document.getElementById("form-read-status");
-
   if (checkbox.checked === true) {
     readStatusButton.textContent = "Read";
     readStatusButton.classList.add("read");
@@ -59,7 +58,6 @@ function getReadStatusButton() {
 
 function handleReadButton(event) {
   const button = event.target;
-
   if (button.classList[0] === "read") {
     button.classList.remove("read");
     button.classList.add("unread");
@@ -73,6 +71,7 @@ function handleReadButton(event) {
 
 function constructDeleteButton(index) {
   const deleteButton = document.createElement("button");
+  deleteButton.classList.add("card-button");
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", (e) => {
     myLibrary.splice(index, 1);
