@@ -45,6 +45,8 @@ function getNewPageCount(pageCount) {
 function getReadStatusButton() {
   const readStatusButton = document.createElement("button");
   const checkbox = document.getElementById("form-read-status");
+  readStatusButton.setAttribute("id", "read-status-button");
+  
   if (checkbox.checked === true) {
     readStatusButton.textContent = "Read";
     readStatusButton.classList.add("read");
@@ -58,14 +60,19 @@ function getReadStatusButton() {
 
 function handleReadButton(event) {
   const button = event.target;
+  const index = button.parentElement.dataset.index;
+  console.log(event);
+
   if (button.classList[0] === "read") {
     button.classList.remove("read");
     button.classList.add("unread");
     button.textContent = "Unread";
+    myLibrary[index].readStatus = false;
   } else {
     button.classList.remove("unread");
     button.classList.add("read");
     button.textContent = "Read";
+    myLibrary[index].readStatus = true;
   }
 }
 
